@@ -6,6 +6,7 @@
           thead = scroller.find('thead'),
           th = scroller.find('th:first-child'),
           td = scroller.find('td:first-child').add(th),
+          td1 = scroller.find('td:nth-child(2)'),
           w, h;
 
       scroller.find('td:first-child, th').each(function() {
@@ -16,6 +17,7 @@
 
       scroller.css({ position: 'relative', paddingTop: thead.height() });
       thead.css({ position: 'absolute', top: '0px' });
+      td1.css({ paddingLeft: parseInt(td1.css('padding-left'), 10) + td.outerWidth() });
       td.css({ position: 'absolute', left: '0px', zIndex: 1 });
       th.css({ position: 'relative', zIndex: 2 });
 
